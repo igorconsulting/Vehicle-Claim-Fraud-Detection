@@ -1,48 +1,48 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 import pickle
 import json
-from sklearn.ensemble import RandomForestClassifier
+
 
 ## Creating the header of our App ##
 
-st.markdown("<h1 style='text-align: center; color: black;'>Vehicle Isurance Fraud Prediction App</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>Vehicle Insurance Fraud Prediction App</h1>", unsafe_allow_html=True)
+
+htp="https://raw.githubusercontent.com/mathlaranjeira/Vehicle-Claim-Fraud-Detection/main/deploy/car_insurance.png"
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image('car_insurance.png', width = 250)
+    st.image(htp, width = 250)
 
 with col2:
-    st.image('car_insurance.png', width = 250)
+    st.image(htp, width = 250)
 
 with col3:
-    st.image('car_insurance.png', width = 250)
+    st.image(htp, width = 250)
 
 
 # importing the model
 
-model = pickle.load(open('rf.sav', 'rb'))
+model = pickle.load(open('deploy/rf.sav', 'rb'))
 
 # Opening the json files
 
-with open('vehicle_price_cat_to_number.json', 'r') as file_json:
+with open('deploy/vehicle_price_cat_to_number.json', 'r') as file_json:
     vehicle_price_get = json.loads(file_json.read())
 
-with open('all_perils_cat_to_num.json', 'r') as file_json:
+with open('deploy/all_perils_cat_to_num.json', 'r') as file_json:
     all_perils_get = json.loads(file_json.read())
 
-with open('sedan_cat_to_num.json', 'r') as file_json:
+with open('deploy/sedan_cat_to_num.json', 'r') as file_json:
     sedan_get = json.loads(file_json.read())
 
-with open('policy_holder_cat_to_num.json', 'r') as file_json:
+with open('deploy/policy_holder_cat_to_num.json', 'r') as file_json:
     policy_holder_get = json.loads(file_json.read())
 
-with open('deductible.json', 'r') as file_json:
+with open('deploy/deductible.json', 'r') as file_json:
     deductible_get = json.loads(file_json.read())
 
-with open('address_change_claim_cat_to_num.json', 'r') as file_json:
+with open('deploy/address_change_claim_cat_to_num.json', 'r') as file_json:
     address_change_get = json.loads(file_json.read())
 
 # creating the boxes to select the values of each attribute
@@ -78,6 +78,7 @@ if st.button('Make Fraud Prediction'):
     inputs = [[input_all_perils, input_sedan, input_policy_holder, input_deductible, input_address_change, input_age, input_vehicle_price]]
     prediction = model.predict(inputs)
     if prediction == 0:
-        st.write('It is not a fraud.')
+        st.markdown("<h1 style='text-align: center; color: black;'>It is not a fraud</h1>", unsafe_allow_html=True)
+        
     else: 
-        st.write('It is a fraud.')
+        st.markdown("<h1 style='text-align: center; color: black;'>It is a fraud</h1>", unsafe_allow_html=True)
