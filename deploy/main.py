@@ -7,7 +7,7 @@ import json
 
 st.markdown("<h1 style='text-align: center; color: black;'>Vehicle Insurance Fraud Prediction App</h1>", unsafe_allow_html=True)
 
-htp="https://raw.githubusercontent.com/mathlaranjeira/Vehicle-Claim-Fraud-Detection/deploy/car_insurance.png"
+htp="https://raw.githubusercontent.com/mathlaranjeira/Vehicle-Claim-Fraud-Detection/main/deploy/car_insurance.png"
 
 col1, col2, col3 = st.columns(3)
 
