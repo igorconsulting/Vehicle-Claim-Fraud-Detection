@@ -39,7 +39,7 @@ Our decision were also based on the ROC curve, which is presented below:
 
 ![image](https://user-images.githubusercontent.com/100421970/196779432-a174779c-54c4-4fed-8dc8-b15738ac63a5.png)
 
-By some estimatives, through our method, the insurance company could save US$ 434022.47 per year, an economy of 97.75%!
+By some estimatives, through our method, the insurance company could save US$ 434,022.47 per year, an economy of 97.75%!
 
 We also make a deploy of the model, you can check it here: https://guilhermefulop-vehicle-claim-fraud-detection-deploymain-hcj60e.streamlitapp.com/
 
