@@ -35,7 +35,7 @@ With the model prepared, we plot the confudion matrix and, as we can see, only 5
 
 ![image](https://user-images.githubusercontent.com/103580606/196772364-fb2cb5b1-3528-487c-82d8-5ba070c41d21.png)
 
-Our decision were also based on the ROC curve, which is presented below:
+Our decision were also based on the ROC curve, which is displayed below:
 
 ![image](https://user-images.githubusercontent.com/100421970/196779432-a174779c-54c4-4fed-8dc8-b15738ac63a5.png)
 
